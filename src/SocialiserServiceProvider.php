@@ -31,7 +31,8 @@ class SocialiserServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/config/socialiser.php' => config_path('socialiser.php'),
         ]);
-
+        ;
+        $this->loadRoutesFrom(__DIR__.'Http/routes.php');
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
     }
 
@@ -40,21 +41,6 @@ class SocialiserServiceProvider extends ServiceProvider
         $this->app->singleton(Factory::class, function ($app) {
             return new SocialiserManager($app);
         });
-
-        $this->mapSocialiserRoutes();
-    }
-
-
-    /**
-     * Define socialisers routes for the application.
-     *
-     * @return void
-     */
-    protected function mapSocialiserRoutes()
-    {
-        Route::prefix('socialiser')
-            ->namespace($this->namespace)
-            ->group(__DIR__ . '/Http/routes.php');
     }
 
     /**
