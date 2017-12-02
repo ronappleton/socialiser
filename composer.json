@@ -1,0 +1,15 @@
+{
+    "name": "ronappleton/socialiser",
+    "description": "Extends Laravels Socialite with extra providers and usage",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ron Appleton",
+            "email": "ron.appleton@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/socialite": "^3.0"
+    }
+}
