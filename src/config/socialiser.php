@@ -15,7 +15,7 @@ return [
     'loginMiddleware' => [
         'web|guest'
     ],
-    'connectMiddlware' => [
+    'connectMiddleware' => [
         'web|auth'
     ],
 

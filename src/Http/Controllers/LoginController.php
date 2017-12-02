@@ -7,11 +7,11 @@ class LoginController extends Controller
 {
     public function socialLogin($provider)
     {
-
+        return $provider . ' Chosen (Login)';
     }
 
     public function socialCallback($provider)
     {
-
+        return $provider . ' Chosen (Login)';
     }
 }

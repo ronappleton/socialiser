@@ -7,11 +7,11 @@ class ConnectController extends Controller
 {
     public function socialLogin($provider)
     {
-
+        return $provider . ' Chosen (Connect)';
     }
 
     public function socialCallback($provider)
     {
-
+        return $provider . ' Chosen (Connect)';
     }
 }
