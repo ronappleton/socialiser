@@ -45,9 +45,6 @@
     }
   },
   "scripts": {
-    "post-install-cmd": [
-      "@php -r \"file_exists(base_path() . '/config/socialiser.php) || copy(base_path() . '/vendor/ronappleton/socialiser/src/config/socialiser.php, base_path() . '/config/socialiser.php');\""
-    ]
   },
   "config": {
     "sort-packages": true

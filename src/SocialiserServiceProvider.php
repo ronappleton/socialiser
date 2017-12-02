@@ -1,4 +1,5 @@
 <?php
+
 namespace RonAppleton\Socialiser;
 
 use Illuminate\Support\Facades\Route;
@@ -7,6 +8,12 @@ use Laravel\Socialite\SocialiteServiceProvider;
 
 class SocialiserServiceProvider extends SocialiteServiceProvider
 {
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . '/config/socialiser.php' => config_path('socialiser.php'),
+        ]);
+    }
 
     public function register()
     {
@@ -16,7 +23,6 @@ class SocialiserServiceProvider extends SocialiteServiceProvider
 
         $this->mapSocialiserRoutes();
     }
-
 
 
     /**
