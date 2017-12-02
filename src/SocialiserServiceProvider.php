@@ -13,6 +13,8 @@ class SocialiserServiceProvider extends SocialiteServiceProvider
         $this->publishes([
             __DIR__ . '/config/socialiser.php' => config_path('socialiser.php'),
         ]);
+
+        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
     }
 
     public function register()
