@@ -24,12 +24,14 @@ class SocialiserServiceProvider extends ServiceProvider
      */
     protected $namespace = 'RonAppleton\Socialiser\Http\Controllers';
 
+
+
     public function boot()
     {
         $this->publishes([
             __DIR__ . '/config/socialiser.php' => config_path('socialiser.php'),
         ]);
-
+        
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
     }
 
@@ -52,7 +54,7 @@ class SocialiserServiceProvider extends ServiceProvider
     {
         Route::prefix('socialiser')
             ->namespace($this->namespace)
-            ->group('Http/routes.php');
+            ->group(__DIR__ . '/Http/routes.php');
     }
 
     /**
