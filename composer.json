@@ -45,10 +45,6 @@
     }
   },
   "scripts": {
-    "post-install-cmd": [
-      "php artisan vendor:publish",
-      "php artisan migrate"
-    ]
   },
   "config": {
     "sort-packages": true

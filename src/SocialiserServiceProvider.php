@@ -31,7 +31,7 @@ class SocialiserServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/config/socialiser.php' => config_path('socialiser.php'),
         ]);
-        
+
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
     }
 
