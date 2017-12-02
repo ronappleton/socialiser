@@ -3,18 +3,25 @@
 namespace RonAppleton\Socialiser;
 
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Contracts\Factory;
-use Laravel\Socialite\SocialiteServiceProvider;
+use RonAppleton\Socialiser\Contracts\Factory;
+use Illuminate\Support\ServiceProvider;
 
-class SocialiserServiceProvider extends SocialiteServiceProvider
+class SocialiserServiceProvider extends ServiceProvider
 {
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = true;
+
     public function boot()
     {
         $this->publishes([
             __DIR__ . '/config/socialiser.php' => config_path('socialiser.php'),
         ]);
 
-        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
     }
 
     public function register()
@@ -37,5 +44,15 @@ class SocialiserServiceProvider extends SocialiteServiceProvider
         Route::prefix('socialiser')
             ->namespace($this->namespace)
             ->group('Http/routes.php');
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [Factory::class];
     }
 }
