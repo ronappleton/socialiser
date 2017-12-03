@@ -8,8 +8,8 @@ return [
      */
     'userModel' => [
         'fullyNameSpacedUserModel' => '', //Optional if you don't want a foreign key linking to user, just ignore, example App\User
-        'userTableName' => '', //Optional if $protected $table is set in model, example users
-        'userPrimaryKeyColumn' => '', //Optional if $protected $primaryKey is set in model, example id
+        'userTableName' => 'users', //Optional if $protected $table is set in model, example users
+        'userPrimaryKeyColumn' => 'id', //Optional if $protected $primaryKey is set in model, example id
         ],
 
     'middleware' => [
