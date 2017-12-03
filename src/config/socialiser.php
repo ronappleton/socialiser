@@ -12,13 +12,6 @@ return [
         'userPrimaryKeyColumn' => '', //Optional if $protected $primaryKey is set in model, example id
         ],
 
-    'loginMiddleware' => [
-        'web|guest'
-    ],
-    'connectMiddleware' => [
-        'web|auth'
-    ],
-
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
