@@ -2,7 +2,6 @@
 
 namespace RonAppleton\Socialiser;
 
-use Illuminate\Support\Facades\Route;
 use RonAppleton\Socialiser\Contracts\Factory;
 use Illuminate\Support\ServiceProvider;
 
