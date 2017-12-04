@@ -32,12 +32,10 @@ class CreateSocialiserProviderUsersTable extends Migration
             $table->timestamps();
         });
 
-        if(userModel())
-        {
-            Schema::table('socialiser_provider_users', function (Blueprint $table) {
-                $table->foreign('user_id')->references(userPrimaryKeyColumn())->on(userModelTable())->onUpdate('RESTRICT')->onDelete('RESTRICT');
-            });
-        }
+        Schema::table('socialiser_provider_users', function (Blueprint $table) {
+            $table->foreign('user_id')->references(userPrimaryKeyColumn())->on(userModelTable())->onUpdate('RESTRICT')->onDelete('RESTRICT');
+        });
+
     }
 
     /**

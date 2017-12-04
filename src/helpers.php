@@ -23,3 +23,11 @@ if(!function_exists('userPrimaryKeyColumn'))
         return config('socialiser.userModel.userPrimaryKeyColumn');
     }
 }
+
+if(!function_exists('getSocialUser'))
+{
+    function getSocialUser($id, $provider)
+    {
+        return \RonAppleton\Socialiser\Models\SocialUser::where(['user_id' => $id, 'provider' => $provider])->first();
+    }
+}

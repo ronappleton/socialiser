@@ -1,20 +1,28 @@
 <?php
 return [
-    /**
-     * Setting this array will allow socialiser whilst running its migration to link social user data to your system users,
-     * if fullyNameSpacedUserModel is not set, no foreign key will be created.
-     * if fullyNameSpacedUserModel is set, socialiser will always attempt to discover the table name and primary key column
-     * before falling back on the values userTableName and userPrimaryKeyColumn
-     */
     'userModel' => [
-        'fullyNameSpacedUserModel' => '', //Optional if you don't want a foreign key linking to user, just ignore, example App\User
-        'userTableName' => 'users', //Optional if $protected $table is set in model, example users
-        'userPrimaryKeyColumn' => 'id', //Optional if $protected $primaryKey is set in model, example id
+        'fullyNameSpacedUserModel' => 'App\User',
+        'userTableName' => 'users',
+        'userPrimaryKeyColumn' => 'id',
         ],
 
     'middleware' => [
       'login'   => [ 'web', 'guest' ],
       'connect' => [ 'web', 'auth' ],
+    ],
+
+    'login_redirect' => 'home',
+
+    'save_social_users' => true,
+
+    'enabled_providers' => [
+        'facebook',
+        'instagram',
+        'twitter',
+        'youtube',
+        'github',
+        'bitbucket',
+        'linkedin',
     ],
 
     'facebook' => [

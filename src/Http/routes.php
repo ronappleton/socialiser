@@ -9,4 +9,5 @@ Route::group(['prefix' => 'socialiser'], function () {
         Route::get('{provider}', 'RonAppleton\Socialiser\Http\Controllers\ConnectController@socialLogin');
         Route::get('{provider}/callback', 'RonAppleton\Socialiser\Http\Controllers\ConnectController@socialCallback');
     });
+    
 });
