@@ -7,7 +7,7 @@ return [
         ],
 
     'middleware' => [
-      'login'   => [ 'web', 'guest' ],
+      'stateful'   => [ 'web', 'guest' ],
       'stateless' => [ 'web', 'guest' ],
     ],
 
