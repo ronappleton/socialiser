@@ -36,26 +36,26 @@ abstract class AbstractSocialController extends Controller
         return in_array($this->provider, config('socialiser.enabled_providers')) && config()->has("socialiser.{$this->provider}");
     }
 
-    private function statelessRedirect()
+    public function statelessRedirect()
     {
         $this->providerHasStateless();
 
         return $this->handleStatelessScopes();
     }
 
-    private function statelessCallback()
+    public function statelessCallback()
     {
         return $this->providerHasStateless() ?:
 
             Socialite::driver($this->provider)->stateless()->user();
     }
 
-    private function statefulRedirect()
+    public function statefulRedirect()
     {
         return $this->handleStatefulScopes();
     }
 
-    private function statefulCallback()
+    public function statefulCallback()
     {
         return Socialite::driver($this->provider)->user();
     }
@@ -91,7 +91,7 @@ abstract class AbstractSocialController extends Controller
         return false;
     }
 
-    private function providerHasStateless()
+    public function providerHasStateless()
     {
         if (method_exists(Socialite::driver($this->provider), 'stateless')) {
             return true;

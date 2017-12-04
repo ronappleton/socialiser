@@ -20,7 +20,7 @@ class SocialController extends AbstractSocialController
         return $this->statefulRedirect();
     }
 
-    public function statelessRedirectToProvider($provider)
+    public function statelessRedirectToProvider()
     {
         if ($this->providerHasStateless()) {
             return $this->statelessRedirect();
@@ -29,12 +29,8 @@ class SocialController extends AbstractSocialController
         return redirect('login');
     }
 
-    public function handleProviderCallback($provider)
+    public function handleProviderCallback()
     {
-        $this->provider = $provider;
-
-        $this->checkProvider();
-
         try {
 
             $user = $this->statefulCallback();
@@ -48,12 +44,8 @@ class SocialController extends AbstractSocialController
         return $this->handleUser($user);
     }
 
-    public function handleStatelessProviderCallback($provider)
+    public function handleStatelessProviderCallback()
     {
-        $this->provider = $provider;
-
-        $this->checkProvider();
-
         try {
 
             $user = $this->statelessCallback();
