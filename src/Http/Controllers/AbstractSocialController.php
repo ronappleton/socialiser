@@ -47,7 +47,7 @@ abstract class AbstractSocialController extends Controller
     {
         return $this->providerHasStateless() ?:
 
-            Socialite::driver($this->provider)->stateless()->user();
+            Socialiser::driver($this->provider)->stateless()->user();
     }
 
     public function statefulRedirect()
@@ -57,34 +57,34 @@ abstract class AbstractSocialController extends Controller
 
     public function statefulCallback()
     {
-        return Socialite::driver($this->provider)->user();
+        return Socialiser::driver($this->provider)->user();
     }
 
     private function handleStatefulScopes()
     {
         return $this->providerHasScopes() ?
 
-            Socialite::driver($this->provider)->scopes(config()->get("socialiser.{$this->provider}.scopes"))->redirect()
+            Socialiser::driver($this->provider)->scopes(config()->get("socialiser.{$this->provider}.scopes"))->redirect()
 
             :
 
-            Socialite::driver($this->provider)->redirect();
+            Socialiser::driver($this->provider)->redirect();
     }
 
     private function handleStatelessScopes()
     {
         return $this->providerHasScopes() ?
 
-            Socialite::driver($this->provider)->scopes(config()->get("socialiser.{$this->provider}.scopes"))->stateless()->redirect()
+            Socialiser::driver($this->provider)->scopes(config()->get("socialiser.{$this->provider}.scopes"))->stateless()->redirect()
 
             :
 
-            Socialite::driver($this->provider)->stateless()->redirect();
+            Socialiser::driver($this->provider)->stateless()->redirect();
     }
 
     private function providerHasScopes()
     {
-        if (method_exists(Socialite::driver($this->provider), 'scopes')) {
+        if (method_exists(Socialiser::driver($this->provider), 'scopes')) {
             return true;
         }
 
@@ -93,7 +93,7 @@ abstract class AbstractSocialController extends Controller
 
     public function providerHasStateless()
     {
-        if (method_exists(Socialite::driver($this->provider), 'stateless')) {
+        if (method_exists(Socialiser::driver($this->provider), 'stateless')) {
             return true;
         }
 
