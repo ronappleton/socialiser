@@ -8,7 +8,7 @@ return [
 
     'middleware' => [
       'login'   => [ 'web', 'guest' ],
-      'connect' => [ 'web', 'auth' ],
+      'stateless' => [ 'web', 'guest' ],
     ],
 
     'login_redirect' => 'home',
