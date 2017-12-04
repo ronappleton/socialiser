@@ -33,7 +33,7 @@ abstract class AbstractSocialController extends Controller
 
     private function providerIsAllowed()
     {
-        return in_array($this->provider, config('socialiser.enabled.providers')) && config()->has("socialiser.{$this->provider}");
+        return in_array($this->provider, config('socialiser.enabled_providers')) && config()->has("socialiser.{$this->provider}");
     }
 
     private function statelessRedirect()
