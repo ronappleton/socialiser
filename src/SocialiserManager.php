@@ -11,6 +11,8 @@ use RonAppleton\Socialiser\One\TwitterProvider;
 use RonAppleton\Socialiser\Two\FacebookProvider;
 use RonAppleton\Socialiser\Two\LinkedInProvider;
 use RonAppleton\Socialiser\Two\BitbucketProvider;
+use RonAppleton\Socialiser\Two\YoutubeProvider;
+use RonAppleton\Socialiser\Two\InstagramProvider;
 use League\OAuth1\Client\Server\Twitter as TwitterServer;
 use RonAppleton\Socialiser\Contracts\Factory;
 
@@ -176,7 +178,7 @@ class SocialiserManager extends Manager implements Factory
      */
     protected function formatRedirectUrl(array $config)
     {
-        $redirect = value($config['redirect']);
+        $redirect = value($config['redirect_url']);
 
         return Str::startsWith($redirect, '/')
             ? $this->app['url']->to($redirect)
