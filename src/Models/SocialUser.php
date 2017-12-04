@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SocialUser extends Model
 {
-    protected $table = 'social_provider_users';
+    protected $table = 'socialiser_provider_users';
 
     protected $fillable = [
         'user_id',
