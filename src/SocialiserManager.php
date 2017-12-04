@@ -5,12 +5,12 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Illuminate\Support\Manager;
-use Laravel\Socialite\Two\GithubProvider;
-use Laravel\Socialite\Two\GoogleProvider;
+use RonAppleton\Socialiser\Two\GithubProvider;
+use RonAppleton\Socialiser\Two\GoogleProvider;
 use RonAppleton\Socialiser\One\TwitterProvider;
-use Laravel\Socialite\Two\FacebookProvider;
-use Laravel\Socialite\Two\LinkedInProvider;
-use Laravel\Socialite\Two\BitbucketProvider;
+use RonAppleton\Socialiser\Two\FacebookProvider;
+use RonAppleton\Socialiser\Two\LinkedInProvider;
+use RonAppleton\Socialiser\Two\BitbucketProvider;
 use League\OAuth1\Client\Server\Twitter as TwitterServer;
 use RonAppleton\Socialiser\Contracts\Factory;
 
@@ -30,7 +30,7 @@ class SocialiserManager extends Manager implements Factory
     /**
      * Create an instance of the specified driver.
      *
-     * @return \Laravel\Socialite\Two\AbstractProvider
+     * @return \RonAppleton\Socialiser\Two\AbstractProvider
      */
     protected function createGithubDriver()
     {
@@ -44,7 +44,7 @@ class SocialiserManager extends Manager implements Factory
     /**
      * Create an instance of the specified driver.
      *
-     * @return \Laravel\Socialite\Two\AbstractProvider
+     * @return \RonAppleton\Socialiser\Two\AbstractProvider
      */
     protected function createFacebookDriver()
     {
@@ -57,7 +57,7 @@ class SocialiserManager extends Manager implements Factory
     /**
      * Create an instance of the specified driver.
      *
-     * @return \Laravel\Socialite\Two\AbstractProvider
+     * @return \RonAppleton\Socialiser\Two\AbstractProvider
      */
     protected function createInstagramDriver()
     {
@@ -71,7 +71,7 @@ class SocialiserManager extends Manager implements Factory
     /**
      * Create an instance of the specified driver.
      *
-     * @return \Laravel\Socialite\Two\AbstractProvider
+     * @return \RonAppleton\Socialiser\Two\AbstractProvider
      */
     protected function createGoogleDriver()
     {
@@ -84,7 +84,7 @@ class SocialiserManager extends Manager implements Factory
     /**
      * Create an instance of the specified driver.
      *
-     * @return \Laravel\Socialite\Two\AbstractProvider
+     * @return \RonAppleton\Socialiser\Two\AbstractProvider
      */
     protected function createYoutubeDriver()
     {
@@ -98,7 +98,7 @@ class SocialiserManager extends Manager implements Factory
     /**
      * Create an instance of the specified driver.
      *
-     * @return \Laravel\Socialite\Two\AbstractProvider
+     * @return \RonAppleton\Socialiser\Two\AbstractProvider
      */
     protected function createLinkedinDriver()
     {
@@ -112,7 +112,7 @@ class SocialiserManager extends Manager implements Factory
     /**
      * Create an instance of the specified driver.
      *
-     * @return \Laravel\Socialite\Two\AbstractProvider
+     * @return \RonAppleton\Socialiser\Two\AbstractProvider
      */
     protected function createBitbucketDriver()
     {
@@ -128,7 +128,7 @@ class SocialiserManager extends Manager implements Factory
      *
      * @param  string  $provider
      * @param  array  $config
-     * @return \Laravel\Socialite\Two\AbstractProvider
+     * @return \RonAppleton\Socialiser\Two\AbstractProvider
      */
     public function buildProvider($provider, $config)
     {
@@ -142,7 +142,7 @@ class SocialiserManager extends Manager implements Factory
     /**
      * Create an instance of the specified driver.
      *
-     * @return \Laravel\Socialite\One\AbstractProvider
+     * @return \RonAppleton\Socialiser\One\AbstractProvider
      */
     protected function createTwitterDriver()
     {
