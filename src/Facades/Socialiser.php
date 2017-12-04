@@ -8,7 +8,7 @@ use RonAppleton\Socialiser\Contracts\Factory;
 /**
  * @see RonAppleton\Socialiser\SocialiserManager
  */
-class Socialite extends Facade
+class Socialiser extends Facade
 {
     /**
      * Get the registered name of the component.

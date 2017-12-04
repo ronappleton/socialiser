@@ -132,7 +132,7 @@ abstract class AbstractProvider implements ProviderContract
     abstract protected function getUserByToken($token);
 
     /**
-     * Map the raw user array to a Socialite User instance.
+     * Map the raw user array to a Socialiser User instance.
      *
      * @param  array  $user
      * @return \RonAppleton\Socialiser\Two\User

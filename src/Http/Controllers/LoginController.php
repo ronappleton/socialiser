@@ -2,7 +2,7 @@
 namespace RonAppleton\Socialiser\Http\Controllers;
 
 use RonAppleton\Socialiser\Http\Controller;
-use Socialiser;
+use RonAppleton\Socialiser\Facades\Socialiser;
 
 class LoginController extends Controller
 {
@@ -14,7 +14,7 @@ class LoginController extends Controller
     public function socialCallback($provider)
     {
         try {
-            $user = Socialiser::driver($provider)->callback()->user();
+            $user = Socialiser::driver($provider)->user();
         } catch (\Exception $e)
         {
             dd($e->getMessage());
