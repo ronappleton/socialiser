@@ -2,7 +2,7 @@
 namespace RonAppleton\Socialiser\Http\Controllers;
 
 use RonAppleton\Socialiser\Http\Controller;
-use RonAppleton\Socialiser\Facades\Socialiser;
+use Socialiser;
 
 class LoginController extends Controller
 {
@@ -17,7 +17,7 @@ class LoginController extends Controller
             $user = Socialiser::driver($provider)->user();
         } catch (\Exception $e)
         {
-            
+
             dd($e->getMessage());
         }
 
