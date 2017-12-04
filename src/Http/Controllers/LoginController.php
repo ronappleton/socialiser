@@ -17,6 +17,7 @@ class LoginController extends Controller
             $user = Socialiser::driver($provider)->user();
         } catch (\Exception $e)
         {
+            
             dd($e->getMessage());
         }
 
