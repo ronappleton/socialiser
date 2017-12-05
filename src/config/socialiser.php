@@ -20,7 +20,7 @@ return [
         'instagram',
         'twitter',
         'youtube',
-        'github',
+        'github', //tested
         'bitbucket',
         'linkedin',
     ],

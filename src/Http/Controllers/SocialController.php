@@ -72,7 +72,7 @@ class SocialController extends AbstractSocialController
             /**
              * We are not logged in so this is a login request, so store a new user in the database if needed.
              */
-            if($user = SocialUser::where('email', $sUser->getEmail())->first())
+            if($user = $this->userModel::where('email', $sUser->getEmail())->first())
             {
                 $userId = $user->id;
             }
