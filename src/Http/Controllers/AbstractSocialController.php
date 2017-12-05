@@ -106,14 +106,16 @@ abstract class AbstractSocialController extends Controller
             'user_id' => $id,
             'provider' => $this->provider,
             'provider_id' => $sUser->getId(),
-            'name' => $sUser->getName(),
-            'nickname' => $sUser->getNickName(),
-            'email' => $sUser->getEmail(),
-            'avatar' => $sUser->getAvatar(),
-            'token' => $sUser->token,
-            'refresh_token' => null,
-            'expires_in' => null,
-        ]);
+        ],
+            [
+                'name' => $sUser->getName(),
+                'nickname' => $sUser->getNickName(),
+                'email' => $sUser->getEmail(),
+                'avatar' => $sUser->getAvatar(),
+                'token' => $sUser->token,
+                'refresh_token' => null,
+                'expires_in' => null,
+            ]);
     }
 
     protected function storeNewUser($user)
