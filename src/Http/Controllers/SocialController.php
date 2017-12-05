@@ -86,7 +86,7 @@ class SocialController extends AbstractSocialController
 
         $this->storeSocialUser($sUser, $userId);
 
-        return redirect(Auth::check() ? redirect(config('socialiser.redirect_url')) : redirect('login'));
+        return redirect(Auth::check() ? config('socialiser.redirect_url') : redirect('login'));
     }
 
 
