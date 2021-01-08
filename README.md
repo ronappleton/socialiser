@@ -9,7 +9,7 @@
 
 ## Introduction
 
-RonAppleton Socialiser is a rebuild of Laravel Socialite which provides an expressive, fluent interface to OAuth authentication with Facebook, Instagram, Twitter, Google, YouTube, LinkedIn, GitHub and Bitbucket. It handles almost all of the boilerplate social authentication code you are dreading writing.
+Socialiser is a rebuild of Laravel Socialite which provides an expressive, fluent interface to OAuth authentication with Facebook, Instagram, Twitter, Google, YouTube, LinkedIn, GitHub and Bitbucket. It handles almost all of the boilerplate social authentication code you are dreading writing.
 
 This adaption of Socialite goes further by adding in the controllers, seperate configuration, migration, and storage of social data to allow super speed integration of social services into your application, If using Laravel version 5.5+ you can require this package and link your buttons, Socialiser will take care of registering and connecting to your chosen social services storing your social data
 .
